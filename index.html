@@ -69,7 +69,7 @@
     /* Navigatie */
     #site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(21,38,21,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08); }
     #site-header nav { display: flex; align-items: center; gap: var(--space-lg); max-width: var(--max-width); margin: 0 auto; padding: .875rem var(--space-md); }
-    .nav-logo img { height: 44px; width: auto; }
+    .nav-logo img { height: 44px; width: auto; mix-blend-mode: screen; }
     #site-header nav ul { display: flex; align-items: center; gap: var(--space-lg); margin-left: auto; }
     #site-header nav ul a { font-size: .9375rem; font-weight: 500; color: rgba(255,255,255,0.75); transition: color var(--transition); position: relative; padding-bottom: 2px; }
     #site-header nav ul a::after { content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 2px; background: var(--color-accent); transform: scaleX(0); transform-origin: left; transition: transform var(--transition); }
@@ -91,7 +91,7 @@
     .hero-stats span { font-size: .8125rem; color: var(--color-text-muted); }
     .hero-image { position: relative; }
     .hero-image::before { content: ''; position: absolute; inset: -32px; background: radial-gradient(ellipse at center, rgba(43,90,36,0.08) 0%, transparent 70%); border-radius: var(--radius-lg); z-index: -1; }
-    .hero-image img { width: 100%; border-radius: var(--radius-md); object-fit: cover; box-shadow: var(--shadow-lg); }
+    .hero-image img { width: 100%; border-radius: var(--radius-md); object-fit: contain; box-shadow: var(--shadow-lg); background: #fff; padding: var(--space-md); }
 
     /* Trust bar */
     #trust-bar { background: var(--color-dark); padding: var(--space-md); }
@@ -111,7 +111,7 @@
 
     /* Product */
     #product { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3xl); align-items: center; max-width: var(--max-width); margin: 0 auto; padding: var(--space-3xl) var(--space-md); }
-    .product-image img { width: 100%; border-radius: var(--radius-md); box-shadow: var(--shadow-lg); }
+    .product-image img { width: 100%; border-radius: var(--radius-md); box-shadow: var(--shadow-lg); background: #fff; padding: var(--space-md); }
     .product-details h2 { font-family: var(--font-heading); font-size: clamp(1.75rem,2.75vw,2.5rem); font-weight: 800; line-height: 1.2; color: var(--color-dark); margin-bottom: var(--space-sm); }
     .product-details > p { font-size: 1.0625rem; color: var(--color-text-mid); line-height: 1.7; margin-bottom: var(--space-lg); }
     .product-specs { border: 1px solid var(--color-border-light); border-radius: var(--radius-md); overflow: hidden; margin-bottom: var(--space-lg); }
@@ -166,7 +166,7 @@
     /* Footer */
     #site-footer { background: var(--color-dark); color: rgba(255,255,255,0.65); }
     .footer-top { display: grid; grid-template-columns: 260px 1fr; gap: var(--space-3xl); max-width: var(--max-width); margin: 0 auto; padding: var(--space-3xl) var(--space-md) var(--space-xl); border-bottom: 1px solid rgba(255,255,255,0.08); }
-    .footer-brand img { margin-bottom: var(--space-sm); filter: brightness(0) invert(1); opacity: .8; }
+    .footer-brand img { margin-bottom: var(--space-sm); mix-blend-mode: screen; opacity: .85; }
     .footer-brand p { font-size: .9375rem; line-height: 1.6; color: rgba(255,255,255,0.45); }
     .footer-nav { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--space-lg); }
     .footer-nav-col h4 { font-family: var(--font-heading); font-size: .8125rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,0.85); margin-bottom: var(--space-sm); }
@@ -356,8 +356,8 @@
     <section id="product" aria-labelledby="product-heading">
       <div class="product-image">
         <img
-          src="product.png"
-          alt="AgriMove trailer front three-quarter view showing aluminum frame, six wheels, and loading ramp"
+          src="product2.png"
+          alt="AgriMove trailer geladen met Deense kar — aanhangwagen met stellingrekken voor kwekerijen"
           width="680"
           height="520"
         />
