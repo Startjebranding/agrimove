@@ -69,12 +69,10 @@
     /* Navigatie */
     #site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(21,38,21,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08); }
     #site-header nav { display: flex; align-items: center; gap: var(--space-lg); max-width: var(--max-width); margin: 0 auto; padding: .875rem var(--space-md); }
-    .nav-logo { display: flex; align-items: center; gap: .625rem; }
-    .nav-logo img { height: 44px; width: auto; mix-blend-mode: screen; }
-    .nav-brand { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; color: var(--color-white); letter-spacing: -.02em; line-height: 1; }
-    .nav-brand strong { color: var(--color-accent); font-weight: 800; }
-    .footer-logo-link { display: flex; align-items: center; gap: .625rem; margin-bottom: var(--space-sm); }
-    .footer-logo-link .nav-brand { font-size: 1.375rem; }
+    .nav-logo { display: flex; align-items: center; }
+    .nav-logo img { height: 72px; width: auto; mix-blend-mode: screen; }
+    .footer-logo-link { display: flex; align-items: center; margin-bottom: var(--space-sm); }
+    .footer-logo-link img { height: 72px; width: auto; mix-blend-mode: screen; }
     .img-placeholder { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; min-height: 360px; background: linear-gradient(135deg, var(--color-light) 0%, var(--color-border-light) 100%); border-radius: var(--radius-md); color: var(--color-text-muted); border: 2px dashed var(--color-border); }
     .img-placeholder span { font-family: var(--font-heading); font-size: .9rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
     #site-header nav ul { display: flex; align-items: center; gap: var(--space-lg); margin-left: auto; }
@@ -223,8 +221,7 @@
   <header id="site-header">
     <nav aria-label="Main navigation">
       <a href="#" class="nav-logo" aria-label="AgriMove home">
-        <img src="agrimove-logo.png" alt="AgriMove" width="44" height="44" onerror="this.style.display='none'" />
-        <span class="nav-brand">Agri<strong>Move</strong></span>
+        <img src="agrimove-logo.png" alt="AgriMove" width="120" height="120" />
       </a>
       <ul>
         <li><a href="#features">Features</a></li>
@@ -527,8 +524,7 @@
     <div class="footer-top">
       <div class="footer-brand">
         <a href="#" class="footer-logo-link" aria-label="AgriMove home">
-          <img src="agrimove-logo.png" alt="AgriMove" width="44" height="44" onerror="this.style.display='none'" />
-          <span class="nav-brand">Agri<strong>Move</strong></span>
+          <img src="agrimove-logo.png" alt="AgriMove" width="120" height="120" />
         </a>
         <p>Professional trailer solutions for the global horticulture industry.</p>
       </div>
