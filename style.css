@@ -1,0 +1,266 @@
+/* ============================================================
+   AGRIMOVE – Stylesheet
+   Fase 1: Lettertypen, kleuren & navigatie
+   ============================================================ */
+
+/* ── Google Fonts ── */
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=Inter:wght@400;500;600&display=swap');
+
+/* ── Design Tokens ── */
+:root {
+  /* Kleuren */
+  --color-dark:          #152615;
+  --color-primary:       #2B5A24;
+  --color-primary-light: #3D7A34;
+  --color-accent:        #E8A020;
+  --color-accent-dark:   #C8881A;
+  --color-light:         #F4F7F0;
+  --color-lighter:       #FAFCF8;
+  --color-white:         #FFFFFF;
+
+  /* Tekst */
+  --color-text:          #152615;
+  --color-text-mid:      #3A5038;
+  --color-text-muted:    #5E7A5A;
+  --color-text-light:    #8FA88A;
+
+  /* Randen */
+  --color-border:        #D0DCCC;
+  --color-border-light:  #E8EEE5;
+
+  /* Ruimte */
+  --space-xs:   0.5rem;
+  --space-sm:   1rem;
+  --space-md:   1.5rem;
+  --space-lg:   2.5rem;
+  --space-xl:   4rem;
+  --space-2xl:  6rem;
+  --space-3xl:  8rem;
+
+  /* Layout */
+  --max-width:  1200px;
+  --radius-sm:  6px;
+  --radius-md:  12px;
+  --radius-lg:  20px;
+
+  /* Lettertypen */
+  --font-heading: 'Barlow', sans-serif;
+  --font-body:    'Inter', sans-serif;
+
+  /* Schaduwen */
+  --shadow-sm: 0 1px 3px rgba(21, 38, 21, 0.08), 0 1px 2px rgba(21, 38, 21, 0.04);
+  --shadow-md: 0 4px 12px rgba(21, 38, 21, 0.10), 0 2px 6px rgba(21, 38, 21, 0.06);
+  --shadow-lg: 0 16px 40px rgba(21, 38, 21, 0.12), 0 4px 12px rgba(21, 38, 21, 0.08);
+
+  /* Overgang */
+  --transition: 0.22s ease;
+}
+
+/* ── Reset & Basis ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--color-text);
+  background-color: var(--color-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* ── Hulpklasse ── */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Knoppen ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition:
+    background-color var(--transition),
+    color var(--transition),
+    border-color var(--transition),
+    transform var(--transition),
+    box-shadow var(--transition);
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background-color: var(--color-accent);
+  color: var(--color-dark);
+  border-color: var(--color-accent);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background-color: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(232, 160, 32, 0.35);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+/* ============================================================
+   NAVIGATIE
+   ============================================================ */
+#site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(21, 38, 21, 0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+#site-header nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0.875rem var(--space-md);
+}
+
+.nav-logo img {
+  height: 44px;
+  width: auto;
+}
+
+#site-header nav ul {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  margin-left: auto;
+}
+
+#site-header nav ul a {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.75);
+  transition: color var(--transition);
+  position: relative;
+  padding-bottom: 2px;
+}
+
+#site-header nav ul a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition);
+}
+
+#site-header nav ul a:hover {
+  color: var(--color-white);
+}
+
+#site-header nav ul a:hover::after {
+  transform: scaleX(1);
+}
+
+#site-header .btn-primary {
+  margin-left: var(--space-sm);
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+}
+
+/* Hamburger (mobiel) */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  margin-left: auto;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-white);
+  border-radius: 2px;
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+/* ── Navigatie: mobiel ── */
+@media (max-width: 768px) {
+  #site-header nav ul,
+  #site-header .btn-primary {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+}
